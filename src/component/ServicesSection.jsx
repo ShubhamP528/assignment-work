@@ -54,25 +54,26 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <div className="bg-linear-to-b from-cyan-50 to-white">
-      <div className="max-w-6xl mx-auto p-6 flex ">
+    <div className="bg-gradient-to-b from-cyan-50 to-white py-10">
+      <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col md:flex-row">
         {/* Section Title */}
-        <div className="flex items-center flex-col gap-12 mt-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 -rotate-90">
+        <div className="flex flex-row md:flex-col items-center gap-2 md:gap-12 mt-0 sm:mt-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 rotate-0 md:-rotate-90">
             Services
           </p>
-          <div className="w-1 h-16 bg-purple-500"></div>
+          <div className="h-[2px] w-12 md:w-1 md:h-16 bg-purple-500"></div>
         </div>
 
-        <div>
-          {/* Section Title */}
-          <h2 className="text-3xl font-bold mt-2 mb-8">
-            EXCLUSIVE. COMMITTED. PROFESSIONAL <br />
+        <div className="flex-1">
+          {/* Section Heading */}
+          <h2 className="text-2xl sm:text-3xl font-bold mt-4 md:mt-2 mb-8 text-center md:text-left">
+            EXCLUSIVE. COMMITTED. PROFESSIONAL{" "}
+            <br className="hidden md:block" />
             SERVICES WE CAN OFFER YOU
           </h2>
 
           {/* Service Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
                 key={service.id}

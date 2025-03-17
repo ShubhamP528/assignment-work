@@ -4,54 +4,53 @@ import room from "../assets/room.png";
 const properties = [
   {
     id: 1,
-    image: room, // Replace with actual image URL
+    image: room,
     title: "Villa with Amazing View",
     price: "$600,000",
-    description:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay...",
+    description: "Beautiful, updated, ground-level Co-op apartment...",
     bedrooms: 4,
     bathrooms: 3,
   },
   {
     id: 2,
     image: room,
-    title: "Villa with Amazing View",
-    price: "$600,000",
-    description:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay...",
-    bedrooms: 4,
-    bathrooms: 3,
+    title: "Modern Luxury House",
+    price: "$850,000",
+    description: "Experience a contemporary lifestyle in this stylish home...",
+    bedrooms: 5,
+    bathrooms: 4,
   },
   {
     id: 3,
     image: room,
-    title: "Villa with Amazing View",
-    price: "$600,000",
-    description:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay...",
-    bedrooms: 4,
-    bathrooms: 3,
+    title: "Cozy Family Apartment",
+    price: "$450,000",
+    description: "A perfect home for families looking for comfort...",
+    bedrooms: 3,
+    bathrooms: 2,
   },
 ];
 
 const RealEstateListings = () => {
   return (
-    <div className="max-w-6xl mx-auto p-6 flex ">
-      {/* Section Title */}
-      <div className="flex items-center flex-col gap-12 mt-12">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 -rotate-90">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col md:flex-row">
+      {/* Section Title - Now horizontal on mobile */}
+
+      <div className="flex flex-row md:flex-col items-center gap-2 md:gap-12 mt-13 ">
+        <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 rotate-0 md:-rotate-90">
           Properties
         </p>
-        <div className="w-1 h-16 bg-purple-500"></div>
+        <div className="h-[2px] w-12 md:w-1 md:h-16 bg-purple-500"></div>
       </div>
 
-      <div>
-        <h2 className="text-3xl font-bold mt-2 mb-6">
-          Explore the Latest Properties <br /> and Select Your Home
+      <div className="w-full">
+        <h2 className="text-2xl sm:text-3xl font-bold mt-2 mb-6 text-center md:text-left">
+          Explore the Latest Properties <br className="hidden sm:block" /> and
+          Select Your Home
         </h2>
 
         {/* Property Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {properties.map((property) => (
             <div
               key={property.id}
@@ -60,7 +59,7 @@ const RealEstateListings = () => {
               <img
                 src={property.image}
                 alt={property.title}
-                className="w-full h-56 object-cover"
+                className="w-full h-48 sm:h-56 object-cover"
               />
               <div className="p-4">
                 <h3 className="text-lg font-semibold">{property.title}</h3>
@@ -68,27 +67,9 @@ const RealEstateListings = () => {
                 <p className="text-gray-500 text-sm mt-2">
                   {property.description}
                 </p>
-                <div className="flex justify-between text-gray-700 text-sm mt-4">
-                  <span>
-                    <img
-                      className="inline-block"
-                      alt=""
-                      src="https://s3-alpha-sig.figma.com/img/4f7a/3ead/84abff7bd037a7fafa7465df4adefee2?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=mqpeVO79DzUzOYz5ehb~95oJlBQlTksZrA20XPdz1dBaDNfTVa1ULIA2LPT5C3AOxWe435vrPxR6QWdRAOuTAvIITAb1LaALM2j8ETDY79DDbygqyIiTQ8HRf50ExMx0o6ftyuiTcAZn-o7mf3dfAzoQdLgGCs5DNuMw8UP7oI1FRX4hge2oyn2pyOm4hBPe0t5i8c3mAuNxOwQ1pgvUp0hPETPorxNI6xAr7eP78LMIdKOa~V1pEHaPmDc7WQNKFHHlqprNSHELpW-1KgsMB8UNEuiGud5oVOwRgJvCS6BDMFfAot3F7E4udz62kLCC7F1buXAd7A958CYdNU3ZeQ__"
-                      height={16}
-                      width={16}
-                    />{" "}
-                    <span>{property.bedrooms} Bedroom</span>
-                  </span>
-                  <span>
-                    <img
-                      className="inline-block"
-                      height={16}
-                      width={16}
-                      alt=""
-                      src="https://s3-alpha-sig.figma.com/img/8723/9179/f080d066c5d9d73ae0fc26bcd5d2ccf0?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=cUZZaj1BjzyPBmUaqcxZQQ1IQWy9DpbvAhZzaNFv469TGkg8TBzUyVbz-yQ-5eIjj7Wspe7hQgavuYqsg5m2ARtHTYD19HHt8Ae3tm8cQpdl7TKePWNd8P8hl5fZfDR46RhCnU6TnVikm5ZU3~UHDIFE4Z3Qzmuook2nXx~SAbEq4XHCBHe4m7LMsHizmIBPHSO174KAij2DtQV8fyIxX5jciuTgIcYGbJ6DLM7LNu3U7AYWHRvS89T8cqZCweV2CyhODG8ik2M15iYhD71Wcu46I8gfQy0yW3tRURcFkeSnbgbhUNaG6KYDfeFdQYSBV6s317S5Qe8bwUPApa1qbg__"
-                    />{" "}
-                    {property.bathrooms} Bathroom
-                  </span>
+                <div className="flex justify-between text-gray-700 text-xs sm:text-sm mt-4">
+                  <span>🛏 {property.bedrooms} Bedroom</span>
+                  <span>🛁 {property.bathrooms} Bathroom</span>
                 </div>
               </div>
             </div>

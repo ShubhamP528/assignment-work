@@ -15,6 +15,7 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${mainImg})` }}
     >
+      {" "}
       {/* Dark Overlay */}
       <div
         className="absolute inset-0"
@@ -68,7 +69,6 @@ const Hero = () => {
               <img src={youtubeImg} alt="" width={16} height={15} />
             </a>
           </div>
-
           {/* Contact Email */}
           <div className="hidden md:flex items-center space-x-2 border-x border-white/50">
             <span className="flex items-center justify-center w-8 h-8 hover:bg-white/10">
@@ -77,84 +77,61 @@ const Hero = () => {
             <span className="mr-1">contact@krystelleromy.com</span>
           </div>
         </div>
-      </div>
-
+      </div>{" "}
       <div className="absolute top-8 left-0 right-0 w-[100%] h-[1px] bg-gray-400"></div>
-
       {/* Navbar */}
-      <nav className="absolute top-10 left-0 right-0 flex justify-between items-center px-36 py-4 text-white">
+      <nav className="absolute top-12 left-0 right-0 flex justify-between items-center px-4 sm:px-8 md:px-36 py-4 text-white">
         {/* Logo */}
         <div className="flex items-center space-x-3">
           <img src={logoImg} alt="Logo" width={41} height={44} />
-          <span className="text-lg font-bold">
-            KRYSTELLE ROMY
-            <br /> <span>RESIDENCE</span>{" "}
+          <span className="text-sm sm:text-lg font-bold">
+            KRYSTELLE ROMY <br />
+            <span>RESIDENCE</span>
           </span>
         </div>
 
         {/* Navbar Links */}
-        <ul className="hidden md:flex space-x-6 text-md font-semibold">
-          <li>
-            <a href="#" className="hover:text-gray-300">
-              HOME
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-300">
-              SELL
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-300">
-              BUY
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-300">
-              ACTIVE LISTINGS
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-300">
-              CONTACT
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-300">
-              BLOGS
-            </a>
-          </li>
+        <ul className="hidden md:flex space-x-4 lg:space-x-6 text-xs lg:text-sm font-semibold">
+          {["HOME", "SELL", "BUY", "ACTIVE LISTINGS", "CONTACT", "BLOGS"].map(
+            (item, index) => (
+              <li key={index}>
+                <a href="#" className="hover:text-gray-300">
+                  {item}
+                </a>
+              </li>
+            )
+          )}
         </ul>
       </nav>
       {/* Hero Section */}
-      <div className="relative flex flex-col items-center justify-center h-screen text-center text-white px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+      <div className="relative flex flex-col items-center justify-center h-screen text-center text-white px-4 sm:px-6">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
           FIND YOUR DREAM HOUSE
         </h1>
-        <p className="text-lg md:text-base mb-6 max-w-2xl">
+        <p className="text-sm sm:text-base md:text-lg mb-6 max-w-2xl">
           We are recognized for exceeding client expectations and delivering
           great results through dedication, ease of process, and extraordinary
           services to our worldwide clients.
         </p>
 
         {/* Buttons */}
-        <div className="flex space-x-4 mb-6">
-          <button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-6">
+          <button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black text-xs sm:text-sm md:text-base">
             WHAT'S MY HOME WORTH
           </button>
-          <button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black">
+          <button className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black text-xs sm:text-sm md:text-base">
             WORK WITH KRYSTELLE
           </button>
         </div>
 
         {/* Search Bar */}
-        <div className="flex w-full max-w-lg bg-gray-300 gap-2 p-2 rounded-lg overflow-hidden shadow-lg">
+        <div className="flex flex-col sm:flex-row w-full max-w-xs sm:max-w-md md:max-w-lg bg-gray-300 gap-2 p-2 rounded-lg overflow-hidden shadow-lg">
           <input
             type="text"
             placeholder="Enter an address, city or neighborhood"
-            className="w-full p-3 text-gray-700 bg-white focus:outline-none rounded-lg"
+            className="w-full p-3 text-gray-700 bg-white focus:outline-none rounded-lg text-xs sm:text-sm"
           />
-          <button className="bg-blue-600 text-white px-6 py-3 hover:bg-blue-700 text-nowrap rounded-lg">
+          <button className="bg-blue-600 text-white px-6 py-3 hover:bg-blue-700 text-nowrap rounded-lg text-xs sm:text-sm">
             SEARCH LISTINGS
           </button>
         </div>

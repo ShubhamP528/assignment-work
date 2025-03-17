@@ -35,18 +35,16 @@ const RealEstateNews = () => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-12 mt-20">
       {/* Heading */}
-      <h2 className="text-3xl font-bold text-black mb-8">
+      <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-8">
         THE MOST RECENT <br /> LOCAL REAL ESTATE NEWS
       </h2>
 
       {/* News Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {newsArticles.map((article) => (
           <div key={article.id} className="relative group">
             {/* News Image with hover brightness filter */}
             <img
-              height={359}
-              width={210}
               src={article.image}
               alt={article.title}
               className="w-full h-80 object-cover rounded-lg shadow-lg transition-all duration-300 filter group-hover:brightness-75"
